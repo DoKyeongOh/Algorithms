@@ -9,6 +9,7 @@ public class Boj1946_신입사원 {
         BufferedReader br = new BufferedReader(fileReader);
         solution(br);
     }
+    
 
     public static void solution(BufferedReader br) throws IOException {
         int testCount = Integer.parseInt(br.readLine());
