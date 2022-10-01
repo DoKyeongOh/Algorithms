@@ -2,7 +2,7 @@ package org.example.baekjoon;
 
 import java.io.*;
 
-public class Boj1946_신입사원 {
+public class Boj1946 {
     public static void main(String[] arg) throws Exception {
         File file = new File("src/main/resources/input");
         FileReader fileReader = new FileReader(file);
