@@ -38,7 +38,7 @@ public class Boj2606 {
         }
 
         int count = dfs(new HashMap<>(), "1");
-        System.out.println(count);
+        System.out.println(count-1);
 
     }
 
