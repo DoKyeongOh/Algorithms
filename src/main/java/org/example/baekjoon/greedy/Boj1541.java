@@ -16,6 +16,14 @@ public class Boj1541 {
     }
 
     public static void solution(BufferedReader br) throws IOException {
-        
+        String[] items = br.readLine().split("-");
+        int answer = 0;
+        for (int i=0 ; i< items.length ; i++) {
+            String[] nums = items[i].split("\\+");
+            int item = 0;
+            for (int j=0 ; j< nums.length ; j++) {
+                
+            }
+        }
     }
 }
