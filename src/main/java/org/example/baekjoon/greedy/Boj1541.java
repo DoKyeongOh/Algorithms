@@ -18,12 +18,17 @@ public class Boj1541 {
     public static void solution(BufferedReader br) throws IOException {
         String[] items = br.readLine().split("-");
         int answer = 0;
-        for (int i=0 ; i< items.length ; i++) {
-            String[] nums = items[i].split("\\+");
-            int item = 0;
-            for (int j=0 ; j< nums.length ; j++) {
-                
-            }
+
+        for (String n : items[0].split("\\+"))
+            answer += Integer.parseInt(n);
+
+        for (int i=1 ; i< items.length ; i++) {
+            int mid = 0;
+            for (String n : items[i].split("\\+"))
+                mid += Integer.parseInt(n);
+
+            answer -= mid;
         }
+        System.out.println(answer);
     }
 }
