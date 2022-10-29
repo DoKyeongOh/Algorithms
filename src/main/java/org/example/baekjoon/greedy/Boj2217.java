@@ -18,24 +18,20 @@ public class Boj2217 {
 
     public static void solution(BufferedReader br) throws IOException {
         int count = Integer.parseInt(br.readLine());
-        int min = 10000;
         int[] ws = new int[count];
 
-        for (int i=0 ; i<count ; i++) {
+        for (int i=0 ; i<count ; i++)
             ws[i] = Integer.parseInt(br.readLine());
-            if (min > ws[i])
-                min = ws[i];
-        }
 
         Arrays.sort(ws);
         int max = ws[count-1];
-        int sum = max;
         int mid = 0;
         for (int i=count-2 ; i>=0 ; i--) {
-            sum += ws[i];
-            mid = sum * (count-i);
+            mid = ws[i] * (count-i);
             if (mid > max)
                 max=mid;
         }
+
+        System.out.println(max);
     }
 }
