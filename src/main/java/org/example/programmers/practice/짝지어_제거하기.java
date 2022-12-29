@@ -2,7 +2,7 @@ package org.example.programmers.practice;
 
 import java.util.Stack;
 
-public class PairingOff {
+public class 짝지어_제거하기 {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         long end = start;
