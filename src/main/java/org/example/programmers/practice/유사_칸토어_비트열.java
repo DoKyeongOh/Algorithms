@@ -1,5 +1,8 @@
 package org.example.programmers.practice;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class 유사_칸토어_비트열 {
     public static void main(String[] args) {
         System.out.println(solution(2, 4, 17)); // 8
@@ -11,13 +14,6 @@ public class 유사_칸토어_비트열 {
     public static int solution(int n, long l, long r) {
         return countOne(n, r) - countOne(n, l-1);
     }
-/*
-* 1101111011000001101111011
-* 1101111011000001101111011
-* 0000000000000000000000000
-* 1101111011000001101111011
-* 1101111011000001101111011
-* */
 
     public static int countOne(int n, long target) {
         int answer = 0;
@@ -27,7 +23,7 @@ public class 유사_칸토어_비트열 {
             exCount++;
             section *= 5;
         }
-
+        
         while (section > 0) {
             long mok = target / section;
             long nmg = target % section;

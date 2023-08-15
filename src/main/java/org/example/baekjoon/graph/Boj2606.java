@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Boj2606 {
 
@@ -17,7 +14,8 @@ public class Boj2606 {
         File file = new File("src/main/resources/input");
         FileReader fileReader = new FileReader(file);
         BufferedReader br = new BufferedReader(fileReader);
-        solution(br);
+//        solution(br);
+        solution2(br);
         return;
     }
 
@@ -53,4 +51,27 @@ public class Boj2606 {
         return map.keySet().size();
     }
 
+    public static void solution2(BufferedReader br) throws IOException {
+        int count = Integer.parseInt(br.readLine());
+        int lineCount = Integer.parseInt(br.readLine());
+        Map<String, Set<String>> map = new HashMap<>();
+        for (int i=0 ; i<count ; i++)
+            map.put("" + (i + 1), new HashSet<>());
+        for (int i=0 ; i<lineCount ; i++) {
+            String[] items = br.readLine().split(" ");
+            map.get(items[0]).add(items[1]);
+            map.get(items[1]).add(items[0]);
+        }
+        Set<String> resultSet = new HashSet<>();
+        dfs2(map, resultSet, "1");
+        System.out.println(resultSet.size()-1);
+    }
+    private static void dfs2(Map<String, Set<String>> map, Set<String> result, String now) {
+        for (String item : map.get(now)) {
+            if (result.contains(item))
+                continue;
+            result.add(item);
+            dfs2(map, result, item);
+        }
+    }
 }

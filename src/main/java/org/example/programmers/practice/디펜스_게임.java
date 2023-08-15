@@ -70,6 +70,12 @@ public class 디펜스_게임 {
             n -= enemy[i];
             queue.add(enemy[i]);
 
+            new Comparator() {
+                @Override
+                public int compare(Object o1, Object o2) {
+                    return 0;
+                }
+            };
             if (n >= 0) {
                 continue;
             }
